@@ -1,0 +1,32 @@
+<div class="row mt-5">
+  <div class="col-sm-12 text-center">
+    <h2><i class="fa fa-user"></i> Student Details</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 ml-5">
+    <a href="" routerLink="/customers"><i class="fa fa-arrow-left"></i> Back to Customers</a>
+  </div>
+</div>
+
+<div class="row mt-5 ml-5 mr-5">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <h3><i class="fa fa-graduation-cap"></i> {{ customer.firstName }} {{ customer.lastName }}</h3>
+      </div>
+      <div class="card-body">
+        <p><img class="img-fluid img-thumbnail mx-auto d-block" style="width: 20%; height: 20%;" *ngIf="customer.img" [src]="customer.img" [alt]="customer.name" /></p>
+        <p class="card-text"><b><i class="fa fa-id-card-o"></i> Personal ID number: </b>{{ customer.IDnumber }}</p>
+        <p class="card-text"><b><i class="fa fa-at"></i> Email: </b>{{ customer.email }}</p>
+        <p class="card-text"><b><i class="fa fa-phone-square"></i> Phone: </b>{{ customer.phone }}</p>
+        <p class="card-text"><b><i class='fa fa-address-card'></i> Address: </b>{{ customer.address }}</p>
+        <p class="card-text"><b><i class="fa fa-book"></i> Course: </b>{{ customer.course }}</p>
+      </div>
+      <div class="card-footer">
+
+      </div>
+    </div>
+  </div>
+</div>

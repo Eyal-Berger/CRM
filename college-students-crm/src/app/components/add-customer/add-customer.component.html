@@ -1,0 +1,120 @@
+<div class="row ">
+  <div class="col-sm-12 mt-5 ml-5">
+    <a href="" routerLink="/customers"><i class="fa fa-arrow-left"></i> Back to Customers</a>
+  </div>
+</div>
+
+<div class="row mt-5 ml-5 mr-5">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header text-center">
+        <h4><i class="fa fa-user-plus"></i> Add New Students</h4>
+      </div>
+      <div class="card-body">
+        <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)" autocomplete="off">
+
+         <div class="form-group">
+           <span  class="text-danger">* </span><strong><i class="fa fa-file"></i> Choose file:</strong><br><br>
+            <label class="btn btn-secondary"  for="file">Upload Photo</label>
+            <input [(ngModel)]="img" (change)="onFileUpload($event)"  #ci="ngModel" [ngClass]="{'is-invalid': ci.errors && ci.touched}" type="file" name="file" id="file"
+              class="form-control-file" accept=".jpg, .jpeg, .png" placeholder="Upload your file" required style="display: none;">
+            <div class="invalid-feedback" [hidden]="!ci.errors?.required">
+              File is Required
+            </div>
+            <div class="invalid-feedback" [hidden]="!ci.errors?.accept">
+              Choose the right format
+            </div>
+         </div>
+
+          <div class="form-group">
+            <label for="first-name"><span class="text-danger">* </span><strong><i class="fa fa-address-book"></i> First Name:</strong></label>
+            <input [(ngModel)]="firstName" #cfn="ngModel" [ngClass]="{'is-invalid': cfn.errors && cfn.touched}" name="firstName" type="text"
+              id="first-name" class="form-control" minlength="2" required>
+            <div class="invalid-feedback" [hidden]="!cfn.errors?.required">
+              First Name is Required
+            </div>
+            <div class="invalid-feedback" [hidden]="!cfn.errors?.minlength">
+              First Name must contain 2 characters min
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="last-name"><span class="text-danger">* </span><strong><i class="fa fa-address-book-o"></i> Last Name:</strong></label>
+            <input [(ngModel)]="lastName" #cln="ngModel" [ngClass]="{'is-invalid': cln.errors && cln.touched}" name="lastName" type="text"
+              id="last-name" class="form-control" minlength="2" required>
+            <div class="invalid-feedback" [hidden]="!cln.errors?.required">
+              Last Name is Required
+            </div>
+            <div class="invalid-feedback" [hidden]="!cln.errors?.minlength">
+              Last Name must contain 2 characters min
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="IDnumber"><span class="text-danger">* </span><strong><i class="fa fa-id-card-o"></i> Personal ID number:</strong></label>
+            <input [(ngModel)]="IDnumber" #cIDnumber="ngModel" [ngClass]="{'is-invalid': cIDnumber.errors && cIDnumber.touched}" type="text"
+              id="IDnumber" name="IDnumber" class="form-control" minlength="9" maxlength="9" pattern="\d{9}$" required>
+            <div class="invalid-feedback" [hidden]="!cIDnumber.errors?.required">
+              ID number is required
+            </div>
+            <div class="invalid-feedback" [hidden]="!cIDnumber.errors?.pattern">
+              A valid ID number is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email"><span class="text-danger">* </span><strong><i class="fa fa-at"></i> Email:</strong></label>
+            <input [(ngModel)]="email" #cemail="ngModel" [ngClass]="{'is-invalid': cemail.errors && cemail.touched}" name="email" type="email"
+              id="email" class="form-control" pattern="^(?!.*\.\.)[\w.\-#!$%&'*+\/=?^_`{}|~]{1,35}@[\w.\-]+\.[a-zA-Z]{2,15}$"
+              required>
+            <div class="invalid-feedback" [hidden]="!cemail.errors?.required">
+              A valid Email is required
+            </div>
+            <div class="invalid-feedback" [hidden]="!cemail.errors?.pattern">
+              A valid Email is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"><span class="text-danger">* </span><strong><i class="fa fa-phone-square"></i> Phone:</strong></label>
+            <input [(ngModel)]="phone" #cphone="ngModel" [ngClass]="{'is-invalid': cphone.errors && cphone.touched}" name="phone" type="tel"
+              id="phone" class="form-control" pattern="\d{9,10}$" required>
+            <div class="invalid-feedback" [hidden]="!cphone.errors?.required">
+              Phone is required
+            </div>
+            <div class="invalid-feedback" [hidden]="!cphone.errors?.pattern">
+              A valid phone number is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address"><strong><i class='fa fa-address-card'></i> Address:</strong></label>
+            <input #search type="text" id="address" [(ngModel)]="address" name="address" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="course"><strong><i class="fa fa-book"></i> Courses:</strong></label>
+            <select [(ngModel)]="course" id="course" class="form-control" name="course">
+              <option>Linux</option>
+              <option>.NET</option>
+              <option>Blockchain</option>
+              <option>UX Design</option>
+              <option>Software Testing</option>
+              <option>Graphic Design</option>
+              <option>Web Development</option>
+              <option>QA Automation</option>
+              <option>3D Animation</option>
+              <option>Internet Marketing</option>
+              <option>Applications Development</option>
+              <option>Network Management</option>
+              <option>Information Security and Cyber</option>
+          </select>
+          </div>
+
+          <input type="submit" name="submit" value="Add New Student" class="btn btn-primary btn-block">
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="row mt-5">
+    <div class="col-sm-12 text-center">
+      <h2><i class="fa fa-users"></i> Students</h2>
+      <p>
+        <a href="" routerLink="/customer/add"><i class="fa fa-plus" title="Add New Student" style="font-size:24px"></i></a>
+      </p>
+    </div>
+  </div>
+
+  <div class="row mt-5 ml-5 mr-5">
+    <div *ngFor="let customer of customers" class="col-sm-12 mb-5">
+      <div class="card">
+        <div class="card-header">
+          <a title="Name & Surname Student" href="" routerLink="/customer/{{ customer.id }}">
+         <i class="fa fa-graduation-cap"></i> {{ customer.firstName }} {{ customer.lastName }}
+         </a>
+        </div>
+        <div class="card-body">
+          <p><i class="fa fa-id-card-o" style="font-size:24px"></i><b> Personal ID number:</b> {{ customer.IDnumber }}</p>
+          <img class="img-fluid img-thumbnail" style="width: 10%; height: 10%;" *ngIf="customer.img" [src]="customer.img" [alt]="customer.name" />
+        </div>
+        <div class="card-footer">
+          <a title="Edit Student Data" href="" routerLink="/customer/edit/{{ customer.id }}" class="btn btn-outline-primary btn-sm"><i class="fa fa-pencil"  style="font-size:24px"></i></a>
+          <a *ngIf="settings.deleteCustomerBtn" (click)="onDelCustomer(customer.id, $event)" title="Delete Student Data" href="" class="btn btn-outline-danger btn-sm ml-3"><i class="fa fa-trash" style="font-size:24px"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>

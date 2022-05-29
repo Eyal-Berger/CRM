@@ -1,0 +1,12 @@
+[1114/173747.100:ERROR:process_reader_win.cc(123)] NtOpenThread: {???????? ? ???????} ??????? ???????? ?????? ? ???????, ?? ????? ?? ?????? ?? ?????????????. (0xc0000022)
+[1114/173747.132:ERROR:exception_snapshot_win.cc(88)] thread ID 14052 not found in process
+[0124/121226.406:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0126/125804.178:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0126/135008.851:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0128/113142.560:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0226/130312.070:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0226/131312.076:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0226/131312.077:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0226/131812.073:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0226/133312.074:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0226/134812.076:ERROR:crash_report_database_win.cc(428)] unexpected header

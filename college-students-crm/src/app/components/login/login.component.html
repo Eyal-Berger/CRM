@@ -1,0 +1,29 @@
+<div class="row mt-5 mb-5">
+  <div class="col-sm-5 m-auto">
+    <form #loginForm="ngForm" (ngSubmit)="onLoginSubmit(loginForm)">
+      <h1 class="text-center mb-5"><i class="fa fa-folder-open-o"></i> Entrance To HackerU-CRM</h1>
+
+      <div class="form-group">
+        <label for="email"><span class="text-danger mr-1">*</span><i class="fa fa-at"></i> Email:</label>
+        <input [(ngModel)]="email" #le="ngModel" [ngClass]="{'is-invalid': le.errors && le.touched}" name="email" type="email" id="email"
+          class="form-control" required pattern="^(?!.*\.\.)[\w.\-#!$%&'*+\/=?^_`{}|~]{1,35}@[\w.\-]+\.[a-zA-Z]{2,15}$">
+        <div class="invalid-feedback mt-2" [hidden]="!le.errors?.required">
+          A valid Email is required
+        </div>
+        <div class="invalid-feedback mt-2" [hidden]="!le.errors?.pattern">
+          A valid Email is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password"><span class="text-danger mr-1">*</span><i class="fa fa-lock"></i> Password:</label>
+        <input [(ngModel)]="password" #lp="ngModel" [ngClass]="{'is-invalid': lp.errors && lp.touched}" name="password" type="password"
+          id="password" class="form-control" required>
+        <div class="invalid-feedback mt-2" [hidden]="!lp.errors?.required">
+          Password is required
+        </div>
+      </div>
+      <button class="btn btn-primary btn-sm btn-block">Enter</button>
+    </form>
+  </div>
+</div>
